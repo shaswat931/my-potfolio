@@ -9,9 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons & theme toggle icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 
 <body>
+    <!-- Three.js Canvas for background animation -->
+    <canvas id="threeJsCanvas"></canvas>
+
     <header class="header">
         <h1 class="heading">Shaswat Shukla</h1>
         <nav class="navigation">
@@ -22,6 +29,10 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle dark/light theme">
+            <i class="fas fa-moon"></i>
+        </button>
     </header>
 
     <section id="about" class="about">
@@ -49,11 +60,11 @@
                         <div class="dot"></div>
                         <div class="content">
                             <h3>Experience</h3>
-                            
+
                             <h4>Intermediate MERN Developer</h4>
                             <p>2025-Present | Remote</p>
                             <p>Completed online courses on web development fundamentals. Developed and deployed my first web application using the MERN stack. Participated in coding challenges and competitions, enhancing problem-solving skills. Attended workshops and seminars on emerging technologies.</p>
-                            
+
                             <h4>Management Assistant – Sure Success Tutorial</h4>
                             <p>2023-2025 | Mumbai</p>
                             <p>
@@ -61,30 +72,27 @@
                             </p>
 
                             <h4>Web Developer Intern – BrightLant</h4>
-                            <p>2023-Present | Remote</p>    
+                            <p>2023-Present | Remote</p>
 
-                        <h4>Certifications</h4>
-                        <ul>
-                        <li>
-                            <strong>Stock Trading</strong> – LeapUp, July 2024<br>
-                            
-                        </li>
-                        <li>
-                            <strong>Personal Financial Planning</strong> – LeapUp, January 2025<br>
-                            
-                        </li>
-                        </ul>
-                    </div>
+                            <h4>Certifications</h4> <!-- Added h4 for consistency -->
+                            <ul>
+                                <li>
+                                    <strong>Stock Trading</strong> – LeapUp, July 2024<br>
+                                </li>
+                                <li>
+                                    <strong>Personal Financial Planning</strong> – LeapUp, January 2025<br>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
-                    </div>
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
                             <h3>Education</h3>
                             <h4>Bachelor Of Science (Information Technology)</h4>
                             <p>2023-Present | Nagindas Khandwala College, Malad, Maharashtra, India</p>
-                            <p>Currently pursuing Information Technology in the theard year of my Higher Secondary Education.</p>
+                            <p>Currently pursuing Information Technology in the third year of my Higher Secondary Education.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -93,24 +101,24 @@
                             <h3>Higher Secondary Education (10+2)</h3>
                             <p>2021-2023 | Vidya Varidhi Vidyalaya</p>
                             <p>Completed my 10+2.</p>
-                            <footer class="social-footer">
-                                <a href="https://github.com/shaswat931/" target="_blank" class="social-link">
-                                    <img src="GitHub-logo.png" alt="GitHub" class="social-logo">
-                                </a>
-                                <a href="https://www.linkedin.com/in/shaswat-shukla-7097a82ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-link">
-                                    <img src="linkedin-logo.webp" alt="LinkedIn" class="social-logo">
-                                 </a>
-                                <a href="mailto:shaswatshukla780@gmail.com" target="_blank" class="social-link">
-                                    <img src="email.png" alt="Email" class="social-logo">
-                                </a>
-                                 <a href="https://wa.me/918097618731" target="_blank" class="social-link">
-                                    <img src="whatapp-logo.jpg" alt="WhatsApp" class="social-logo">
-                                </a>
-                            </footer>
-
                         </div>
                     </div>
                 </section>
+                <!-- Moved social footer out of timeline-item for better semantic structure -->
+                <footer class="social-footer">
+                    <a href="https://github.com/shaswat931/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="GitHub-logo.png" alt="GitHub" class="social-logo">
+                    </a>
+                    <a href="https://www.linkedin.com/in/shaswat-shukla-7097a82ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="linkedin-logo.webp" alt="LinkedIn" class="social-logo">
+                    </a>
+                    <a href="mailto:shaswatshukla780@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="email.png" alt="Email" class="social-logo">
+                    </a>
+                    <a href="https://wa.me/918097618731" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="whatapp-logo.jpg" alt="WhatsApp" class="social-logo">
+                    </a>
+                </footer>
             </div>
         </div>
     </section>
@@ -118,33 +126,39 @@
     <section id="resume" class="resume">
         <h2>Resume</h2>
         <p>Include a link to download your resume or embed it here.</p>
-        <a href="Resume_shawsat.pdf" target="_blank" class="resume-button">Download Resume</a>
+        <a href="Resume_shawsat.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">Download Resume</a>
     </section>
 
- <section id="projects" class="projects">
-  <h2>Projects</h2>
-  <div class="project-slider">
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-slider">
 
-    <div class="project-slide">
-      <h3>ATS Automation Website</h3>
-      <p>ATS Automation is a cutting-edge automation and robotics company. I developed their official website to represent their services in industrial automation, showcasing their expertise through a clean UI, engaging animations, and user-centric design. Features include service highlights, contact integration, and a responsive layout for all devices.</p>
-      <a href="https://atsautomation.in/" target="_blank">View Project</a>
-    </div>
+            <div class="project-slide">
+                <h3>ATS Automation Website</h3>
+                <p>ATS Automation is a cutting-edge automation and robotics company. I developed their official website to represent their services in industrial automation, showcasing their expertise through a clean UI, engaging animations, and user-centric design. Features include service highlights, contact integration, and a responsive layout for all devices.</p>
+                <a href="https://atsautomation.in/" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
 
-    <div class="project-slide">
-      <h3>Swami Vivekanand School Website</h3>
-      <p>This school website is designed for Swami Vivekanand Vidyalaya to provide an informative and engaging platform for students, parents, and teachers. Built with a modern UI and animated interface, it features an about section, faculty highlights, contact forms, and optimized layout for desktop and mobile devices.</p>
-      <a href="https://swamivivekanand-qbli.vercel.app/" target="_blank">View Project</a>
-    </div>
+            <div class="project-slide">
+                <h3>Swami Vivekanand School Website</h3>
+                <p>This school website is designed for Swami Vivekanand Vidyalaya to provide an informative and engaging platform for students, parents, and teachers. Built with a modern UI and animated interface, it features an about section, faculty highlights, contact forms, and optimized layout for desktop and mobile devices.</p>
+                <a href="https://swamivivekanand-qbli.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
 
-    <div class="project-slide">
-      <h3>BrightLant - Personal Brand</h3>
-      <p>BrightLant is my personal software and web development brand. I built this website to showcase my services, portfolio, and expertise in building attractive websites and apps for clients. The site includes animated sections, contact forms, and a responsive layout that works across all devices.</p>
-      <a href="https://brightlant.vercel.app/" target="_blank">View Project</a>
-    </div>
+            <div class="project-slide">
+                <h3>BrightLant - Personal Brand</h3>
+                <p>BrightLant is my personal software and web development brand. I built this website to showcase my services, portfolio, and expertise in building attractive websites and apps for clients. The site includes animated sections, contact forms, and a responsive layout that works across all devices.</p>
+                <a href="https://brightlant.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
 
-  </div>
-</section>
+            <div class="project-slide">
+                <h3>RUDRI – AI Assistant</h3>
+                <p>RUDRI is an advanced AI chatbot built using FastAPI (Python) for the backend and HTML, CSS, and JavaScript for a fully responsive, animated frontend. It features dual personality modes (Achi RUDRI and Buri RUDRI), voice input/output, chat history, dark mode, and custom user interactions. Hosted on PythonAnywhere, it showcases modern AI interaction in a sleek UI.</p>
+                <a href="https://rudri.pythonanywhere.com/" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+
+        </div>
+    </section>
 
 
     <section id="contact" class="contact">
@@ -166,8 +180,14 @@
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Shaswat Shukla. All rights reserved Build With By "TechPhantom Say Hello.</p>
+        <p>© 2024 Shaswat Shukla. All rights reserved. Built With By "TechPhantom".</p>
     </footer>
+
+    <!-- External Libraries (Three.js for 3D background) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.165.0/three.min.js"></script>
+    <!-- Your custom background animation script -->
+    <script src="bg-animation.js"></script>
+    <!-- Your main website script -->
     <script src="index.js"></script>
 </body>
 

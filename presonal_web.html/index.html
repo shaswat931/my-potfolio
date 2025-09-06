@@ -5,20 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaswat Shukla - Personal Website</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="index.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for social icons & theme toggle icon -->
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 
 <body>
-    <!-- Three.js Canvas for background animation -->
+    <!-- Background Animation -->
     <canvas id="threeJsCanvas"></canvas>
 
+    <!-- Header -->
     <header class="header">
         <h1 class="heading">Shaswat Shukla</h1>
         <nav class="navigation">
@@ -29,18 +36,23 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <!-- Theme Toggle Button -->
+
+        <!-- Theme Toggle -->
         <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle dark/light theme">
             <i class="fas fa-moon"></i>
         </button>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="about-content">
             <img src="shaswatlogo.jpg" alt="Shaswat Shukla" class="profile-picture">
             <div class="about-text">
                 <h2>About Me</h2>
+
                 <section class="timeline">
+
+                    <!-- Biography -->
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
@@ -48,6 +60,8 @@
                             <p>Hi, I'm Shaswat Shukla, a web developer and UI/UX designer with a passion for creating beautiful, functional, and user-centered digital experiences. With 2 years of experience in the field, I am always looking for new and innovative ways to bring my clients' visions to life.</p>
                         </div>
                     </div>
+
+                    <!-- Personal Intro -->
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
@@ -56,6 +70,7 @@
                         </div>
                     </div>
 
+                    <!-- Experience -->
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
@@ -67,25 +82,25 @@
 
                             <h4>Management Assistant – Sure Success Tutorial</h4>
                             <p>2023-2025 | Mumbai</p>
-                            <p>
-                            Assisted in managing student batches, coordinating with faculty, and handling tech-based academic activities. Helped streamline class operations, track performance records, and improve student engagement through digital tools.
-                            </p>
+                            <p>Assisted in managing student batches, coordinating with faculty, and handling tech-based academic activities. Helped streamline class operations, track performance records, and improve student engagement through digital tools.</p>
 
-                            <h4>Web Developer Intern – BrightLant</h4>
-                            <p>2023-Present | Remote</p>
-
-                            <h4>Certifications</h4> <!-- Added h4 for consistency -->
+                            <h4>Certifications</h4>
                             <ul>
                                 <li>
-                                    <strong>Stock Trading</strong> – LeapUp, July 2024<br>
+                                    <strong>Python Full Stack Web Developer</strong> – EduSkills Academy, August 2025<br>
+                                    (Certificate No.: c8e96f0c837503a19931eea25ec9ead1)
                                 </li>
                                 <li>
-                                    <strong>Personal Financial Planning</strong> – LeapUp, January 2025<br>
+                                    <strong>Stock Trading</strong> – LeapUp, July 2024
+                                </li>
+                                <li>
+                                    <strong>Personal Financial Planning</strong> – LeapUp, January 2025
                                 </li>
                             </ul>
                         </div>
                     </div>
 
+                    <!-- Education -->
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
@@ -95,6 +110,8 @@
                             <p>Currently pursuing Information Technology in the third year of my Higher Secondary Education.</p>
                         </div>
                     </div>
+
+                    <!-- HSC -->
                     <div class="timeline-item">
                         <div class="dot"></div>
                         <div class="content">
@@ -103,8 +120,10 @@
                             <p>Completed my 10+2.</p>
                         </div>
                     </div>
+
                 </section>
-                <!-- Moved social footer out of timeline-item for better semantic structure -->
+
+                <!-- Social Links -->
                 <footer class="social-footer">
                     <a href="https://github.com/shaswat931/" target="_blank" rel="noopener noreferrer" class="social-link">
                         <img src="GitHub-logo.png" alt="GitHub" class="social-logo">
@@ -112,10 +131,10 @@
                     <a href="https://www.linkedin.com/in/shaswat-shukla-7097a82ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="social-link">
                         <img src="linkedin-logo.webp" alt="LinkedIn" class="social-logo">
                     </a>
-                    <a href="mailto:shaswatshukla780@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <a href="mailto:shaswatshukla780@gmail.com?subject=Portfolio%20Contact&body=Hello%20Shaswat%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="social-link">
                         <img src="email.png" alt="Email" class="social-logo">
                     </a>
-                    <a href="https://wa.me/918097618731" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <a href="https://wa.me/918097618731?text=Hello%20Shaswat%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="social-link">
                         <img src="whatapp-logo.jpg" alt="WhatsApp" class="social-logo">
                     </a>
                 </footer>
@@ -123,12 +142,17 @@
         </div>
     </section>
 
+    <!-- Resume Section -->
     <section id="resume" class="resume">
-        <h2>Resume</h2>
-        <p>Include a link to download your resume or embed it here.</p>
-        <a href="Resume_shawsat.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">Download Resume</a>
+        <h2>Resume & Certifications</h2>
+        <p>Explore my professional documents and verified certifications.</p>
+        <div class="resume-buttons-container">
+            <a href="Resume_shawsat.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">Download Resume</a>
+            <a href="certificate.pdf" target="_blank" rel="noopener noreferrer" class="resume-button secondary">View Python Full Stack Certificate</a>
+        </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="project-slider">
@@ -153,25 +177,15 @@
 
             <div class="project-slide">
                 <h3>Weather Application</h3>
-                <p>This Weather App is a responsive and interactive web application built using HTML, CSS, and JavaScript. 
-                    It provides real-time weather updates by fetching live data from a weather API. 
-                    Features include location-based weather detection, city search, temperature conversion (°C/°F), 
-                    detailed weather conditions (humidity, wind speed, visibility), and a clean, modern UI with light/dark mode support.  
-                    The project demonstrates API integration, responsive design, and smooth animations.</p>
-                    <a href="https://weather-h6fr.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
-                </div>
+                <p>This Weather App is a responsive and interactive web application built using HTML, CSS, and JavaScript. It provides real-time weather updates by fetching live data from a weather API. Features include location-based weather detection, city search, temperature conversion (°C/°F), detailed weather conditions (humidity, wind speed, visibility), and a clean, modern UI with light/dark mode support. The project demonstrates API integration, responsive design, and smooth animations.</p>
+                <a href="https://weather-h6fr.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
 
-                <div class="project-slide">
-                    <h3>Vishal Transport – Logistics Management System</h3>
-                    <p>Vishal Transport is a logistics and transport management web application built using Node.js and Express.js for the backend, 
-                        and HTML, CSS, and JavaScript for the frontend. 
-                        It features vehicle tracking, booking management, driver details, invoice generation, and real-time data handling with MongoDB/MySQL integration. 
-                        The system provides an easy-to-use dashboard for admins, secure data handling, and a responsive design for seamless access across devices. 
-                        Hosted on a cloud server, it showcases modern full-stack development with a focus on scalability and performance.</p>
-                        <a href="https://vishal-transport-cqwq.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
-                    </div>
-
-
+            <div class="project-slide">
+                <h3>Vishal Transport – Logistics Management System</h3>
+                <p>Vishal Transport is a logistics and transport management web application built using Node.js and Express.js for the backend, and HTML, CSS, and JavaScript for the frontend. It features vehicle tracking, booking management, driver details, invoice generation, and real-time data handling with MongoDB/MySQL integration. The system provides an easy-to-use dashboard for admins, secure data handling, and a responsive design for seamless access across devices. Hosted on a cloud server, it showcases modern full-stack development with a focus on scalability and performance.</p>
+                <a href="https://vishal-transport-cqwq.vercel.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
 
             <div class="project-slide">
                 <h3>RUDRI – AI Assistant</h3>
@@ -182,7 +196,7 @@
         </div>
     </section>
 
-
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact</h2>
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -201,16 +215,14 @@
         </form>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <p>© 2024 Shaswat Shukla. All rights reserved. Built With By "TechPhantom".</p>
     </footer>
 
-    <!-- External Libraries (Three.js for 3D background) -->
+    <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.165.0/three.min.js"></script>
-    <!-- Your custom background animation script -->
     <script src="bg-animation.js"></script>
-    <!-- Your main website script -->
     <script src="index.js"></script>
 </body>
-
 </html>

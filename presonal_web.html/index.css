@@ -1,55 +1,60 @@
-/* General Styles for the Page */
+/* Basic Resets & Global Styles */
 :root {
-    /* --- Dark Theme (Default) --- */
-    --bg-page: #101018; /* Darkest background for the body */
-    --bg-canvas-start: #120A2F; /* Deepest purple for 3D background gradient */
-    --bg-canvas-end: #2A175C; /* Vibrant deep purple for 3D background gradient */
-    --text-primary: #e0e0e0; /* Light grey for main text */
-    --text-secondary: #aaaaaa; /* Subtler grey for secondary text/paragraphs */
-    --accent-color: #8C52FF; /* Electric Purple for highlights (headings, buttons) */
-    --link-color: #FF577F; /* Vibrant Pink/Red for links and call-to-actions */
-    --header-bg: rgba(16, 16, 24, 0.9); /* Slightly transparent dark header */
-    --section-bg: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay for sections */
-    --border-color: rgba(255, 255, 255, 0.15); /* Light border for elements */
-    --shadow-color: rgba(0, 0, 0, 0.6); /* Darker shadow for depth */
-    --card-bg: rgba(255, 255, 255, 0.08); /* Transparent white for cards */
-    --card-border: rgba(255, 255, 255, 0.1);
-    --card-shadow: rgba(0, 0, 0, 0.4);
+    /* --- Premium Light Mode Palette --- */
+    --background-color-light: #f4f7f6; /* Soft off-white */
+    --text-color-light: #34495e; /* Deep charcoal blue */
+    --primary-color-light: #3a86ff; /* A vibrant, professional blue */
+    --primary-color-light-rgb: 58, 134, 255; /* RGB components for rgba() */
+    --secondary-color-light: #6c757d; /* Muted grey */
+    --accent-color-light: #ff7f50; /* A soft, warm coral/orange */
+    --card-background-light: #ffffff;
+    --border-color-light: #e0e6e9;
+    --header-background-light: rgba(255, 255, 255, 0.95);
+    --shadow-light: 0 6px 20px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
 
-    /* Three.js Particle Colors (from CSS) */
-    --particle-color-1: #8C52FF; /* Matches accent */
-    --particle-color-2: #FF577F; /* Matches link */
+    /* --- Premium Dark Mode Palette --- */
+    --background-color-dark: #1a202c; /* Deep, rich charcoal */
+    --text-color-dark: #e2e8f0; /* Soft off-white */
+    --primary-color-dark: #4a6fa5; /* Muted, professional blue */
+    --primary-color-dark-rgb: 74, 111, 165; /* RGB components for rgba() */
+    --secondary-color-dark: #a0aec0; /* Lighter grey for secondary text */
+    --accent-color-dark: #f08a5d; /* A soft, warm orange/coral accent */
+    --card-background-dark: #2d3748; /* Slightly lighter dark blue for cards */
+    --border-color-dark: #4a5568;
+    --header-background-dark: rgba(26, 32, 44, 0.95);
+    --shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.4); /* Slightly stronger shadow */
+
+    /* Default to light mode variables */
+    --main-background: var(--background-color-light);
+    --main-text-color: var(--text-color-light);
+    --main-primary-color: var(--primary-color-light);
+    --main-primary-color-rgb: var(--primary-color-light-rgb); /* Dynamically set RGB for main */
+    --main-secondary-color: var(--secondary-color-light);
+    --main-accent-color: var(--accent-color-light);
+    --main-card-background: var(--card-background-light);
+    --main-border-color: var(--border-color-light);
+    --main-header-background: var(--header-background-light);
+    --main-shadow: var(--shadow-light);
 }
 
-body.light-theme {
-    /* --- Light Theme --- */
-    --bg-page: #f0f2f5; /* Light grey for overall background */
-    --bg-canvas-start: #E0F2F7; /* Soft light blue for 3D background gradient */
-    --bg-canvas-end: #F0F9FF; /* Even lighter, almost white for 3D background gradient */
-    --text-primary: #333333; /* Dark grey for main text */
-    --text-secondary: #555555; /* Medium grey for secondary text */
-    --accent-color: #007bff; /* Bright blue for highlights */
-    --link-color: #28a745; /* Green for links */
-    --header-bg: rgba(255, 255, 255, 0.9); /* Slightly transparent light header */
-    --section-bg: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay for sections */
-    --border-color: rgba(0, 0, 0, 0.1); /* Darker border for light theme */
-    --shadow-color: rgba(0, 0, 0, 0.2); /* Lighter shadow for light theme */
-    --card-bg: rgba(255, 255, 255, 0.9); /* Lighter card background */
-    --card-border: rgba(0, 0, 0, 0.1);
-    --card-shadow: rgba(0, 0, 0, 0.15);
-
-    /* Three.js Particle Colors (from CSS) */
-    --particle-color-1: #007bff; /* Matches accent */
-    --particle-color-2: #28a745; /* Matches link */
+/* Dark Mode Overrides */
+body.dark-mode {
+    --main-background: var(--background-color-dark);
+    --main-text-color: var(--text-color-dark);
+    --main-primary-color: var(--primary-color-dark);
+    --main-primary-color-rgb: var(--primary-color-dark-rgb); /* Dynamically set RGB for main */
+    --main-secondary-color: var(--secondary-color-dark);
+    --main-accent-color: var(--accent-color-dark);
+    --main-card-background: var(--card-background-dark);
+    --main-border-color: var(--border-color-dark);
+    --main-header-background: var(--header-background-dark);
+    --main-shadow: var(--shadow-dark);
 }
 
-
-/* Global Resets */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; /* Smooth theme transitions */
+    box-sizing: border-box;
 }
 
 html {
@@ -58,125 +63,83 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-page); /* Page background from theme variable */
-    color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    min-height: 100vh;
-    position: relative;
-    display: flex; /* For centering content vertically if needed, or flex column layout */
-    flex-direction: column;
+    color: var(--main-text-color);
+    background-color: var(--main-background);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
-/* Custom Scrollbar Styles (Webkit - Chrome, Safari) */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px; /* For horizontal scrollbars like pre */
+a {
+    color: var(--main-primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(100, 100, 100, 0.1); /* Subtle track */
-    border-radius: 5px;
+a:hover {
+    color: var(--main-accent-color);
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--accent-color); /* Thumb color matches accent */
-    border-radius: 5px;
-    border: 2px solid transparent; /* Gives a slight inset effect */
+h1, h2, h3, h4 {
+    color: var(--main-text-color);
+    margin-bottom: 0.8em;
+    font-weight: 700;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--link-color); /* Hover color for thumb */
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.2em; }
+
+p {
+    margin-bottom: 1em;
 }
 
-/* Custom Scrollbar Styles (Firefox) */
-body {
-    scrollbar-width: thin; /* "auto" or "thin" */
-    scrollbar-color: var(--accent-color) rgba(100, 100, 100, 0.1); /* thumb track */
-}
-/* Apply to specific scrollable elements if body isn't enough */
-.about-content, .resume, .projects, .contact, .timeline-item .content, textarea {
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) rgba(100, 100, 100, 0.1);
+ul {
+    list-style: none;
 }
 
-
-/* --- Three.js Canvas Styling --- */
+/* Three.js Canvas Background */
 #threeJsCanvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background: linear-gradient(45deg, var(--bg-canvas-start), var(--bg-canvas-end), #3A1E8A); /* Base gradient from theme variables */
-    background-size: 400% 400%; /* For animation */
-    animation: background-shift 15s ease infinite; /* Animation defined below */
-    transition: background 0.5s ease;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays in the background */
 }
 
-@keyframes background-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Ensure content is readable on top of the canvas */
-.header, .about, .resume, .projects, .contact, .footer {
-    position: relative;
-    z-index: 1; /* Stacks content above the canvas */
-}
-
-/* Apply a subtle overlay/background to sections for readability over animation */
-section:not(.header):not(.footer) > div, /* Target .about-content, resume, projects, contact sections directly */
-.resume, .projects, .contact { /* These already apply it */
-    background: var(--section-bg);
-    backdrop-filter: blur(8px); /* Increased blur for more depth */
-    border-radius: 15px;
-    box-shadow: 0 5px 20px var(--shadow-color);
-    padding: 40px;
-    margin: 30px auto;
-    max-width: 900px;
-    border: 1px solid var(--border-color);
-}
-
-
-/* Header Styling */
+/* Header */
 .header {
-    background: var(--header-bg);
-    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--main-header-background);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
+    box-shadow: var(--main-shadow);
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
-.heading {
-    font-size: 2.2rem;
+.header .heading {
+    font-size: 1.8em;
+    color: var(--main-text-color);
     font-weight: 700;
-    color: var(--accent-color);
-    text-shadow: 0 0 5px rgba(140, 82, 255, 0.7); /* Subtle glow for heading */
 }
 
 .navigation ul {
-    list-style: none;
     display: flex;
-}
-
-.navigation ul li {
-    margin-left: 25px;
+    gap: 2rem;
 }
 
 .navigation a {
-    color: var(--text-primary);
-    text-decoration: none;
+    color: var(--main-text-color);
     font-weight: 600;
     position: relative;
-    padding-bottom: 5px; /* Space for underline */
+    padding: 0.5rem 0;
 }
 
 .navigation a::after {
@@ -184,232 +147,282 @@ section:not(.header):not(.footer) > div, /* Target .about-content, resume, proje
     position: absolute;
     width: 0;
     height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: var(--link-color);
-    transition: width 0.3s ease, right 0.3s ease;
+    background: var(--main-primary-color);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
 }
 
-.navigation a:hover::after {
+.navigation a:hover::after,
+.navigation a.active::after {
     width: 100%;
-    right: 0;
 }
 
-.navigation a:hover {
-    color: var(--link-color);
-}
-
-/* Theme Toggle Button */
 .theme-toggle-button {
     background: none;
     border: none;
-    color: var(--text-primary);
-    font-size: 1.5rem;
+    color: var(--main-text-color);
+    font-size: 1.5em;
     cursor: pointer;
-    margin-left: 30px;
     transition: color 0.3s ease, transform 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
 .theme-toggle-button:hover {
-    color: var(--accent-color);
+    color: var(--main-primary-color);
     transform: scale(1.1);
 }
 
-/* Section Common Styling */
-h2 {
-    font-size: 2.8rem; /* Slightly larger */
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 50px; /* More space */
-    color: var(--accent-color);
-    text-shadow: 0 0 8px rgba(140, 82, 255, 0.6); /* Glow for section headings */
+/* Sections */
+section {
+    padding: 6rem 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-p {
-    margin-bottom: 18px; /* More vertical spacing */
-    color: var(--text-secondary);
+section:not(#about) {
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 2.5rem;
+    position: relative;
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--main-primary-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
 }
 
 /* About Section */
 .about {
-    padding: 80px 20px;
-    text-align: center;
+    padding-top: 8rem; /* Account for sticky header */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top initially */
+    text-align: left;
 }
 
 .about-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px; /* Increased gap */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+    align-items: flex-start;
 }
 
 .profile-picture {
-    width: 220px; /* Slightly larger */
-    height: 220px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid var(--accent-color); /* Thicker border */
-    box-shadow: 0 0 20px rgba(106, 13, 173, 0.8), inset 0 0 10px rgba(106, 13, 173, 0.5); /* Enhanced glow and inset */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.profile-picture:hover {
-    transform: scale(1.08); /* More pronounced hover */
-    box-shadow: 0 0 30px var(--link-color), inset 0 0 15px var(--link-color); /* Link color glow on hover */
+    border: 6px solid var(--main-primary-color);
+    box-shadow: var(--main-shadow);
+    flex-shrink: 0; /* Prevent shrinking */
+    animation: fadeIn 1s ease-out forwards;
 }
 
 .about-text {
     flex: 1;
-    text-align: left;
+    min-width: 300px; /* Minimum width before wrapping */
 }
 
-/* Timeline Styling */
+.about-text h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.about-text h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+/* Timeline */
 .timeline {
     position: relative;
-    max-width: 800px;
-    margin: 60px auto; /* More margin */
-    padding-left: 40px; /* More space for the line */
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 19px; /* Aligned with dots */
-    top: 0;
-    bottom: 0;
-    width: 3px; /* Thicker line */
-    background-color: var(--accent-color);
+    padding-left: 30px;
+    margin-top: 2rem;
+    border-left: 2px solid var(--main-border-color);
 }
 
 .timeline-item {
-    margin-bottom: 40px; /* Increased margin between items */
+    margin-bottom: 2rem;
     position: relative;
-    padding-left: 50px; /* More space for dot and content */
+    opacity: 0; /* For scroll reveal animation */
+    transform: translateY(20px); /* For scroll reveal animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.timeline-item:last-child {
-    margin-bottom: 0;
+.timeline-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .timeline-item .dot {
     position: absolute;
-    left: 14px; /* Aligned with the line */
-    top: 8px; /* Adjust vertical alignment */
-    width: 20px; /* Larger dot */
+    left: -11px;
+    top: 5px;
+    width: 20px;
     height: 20px;
-    background-color: var(--link-color);
+    background: var(--main-primary-color);
     border-radius: 50%;
-    border: 3px solid var(--text-primary); /* Thicker border */
-    z-index: 2;
-    box-shadow: 0 0 0 5px rgba(255, 87, 127, 0.5); /* Stronger glow */
+    border: 3px solid var(--main-background);
+    box-shadow: 0 0 0 3px var(--main-primary-color);
 }
 
 .timeline-item .content {
-    background: var(--card-bg); /* Use card background for consistency */
-    padding: 25px; /* Increased padding */
-    border-radius: 12px; /* Consistent border radius */
-    border: 1px solid var(--card-border);
-    box-shadow: 0 6px 15px var(--card-shadow); /* Consistent shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-item .content:hover {
-    transform: translateY(-8px); /* More pronounced lift */
-    box-shadow: 0 10px 25px rgba(140, 82, 255, 0.5); /* Accent color glow on hover */
+    background: var(--main-card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--main-shadow);
+    margin-left: 15px; /* Space for the dot */
+    border: 1px solid var(--main-border-color);
 }
 
 .timeline-item h3 {
-    font-size: 1.7rem;
-    color: var(--accent-color);
-    margin-bottom: 12px;
+    color: var(--main-primary-color);
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
 }
 
 .timeline-item h4 {
-    font-size: 1.3rem;
-    color: var(--link-color);
-    margin-top: 10px;
-    margin-bottom: 8px;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    color: var(--main-text-color);
 }
 
 .timeline-item ul {
     list-style: disc;
-    margin-left: 25px;
-    margin-top: 12px;
-    color: var(--text-secondary);
+    margin-left: 20px;
+    margin-top: 1em;
 }
 
-/* Social Footer within About section */
+.timeline-item ul li {
+    margin-bottom: 0.5em;
+}
+
+/* Social Footer */
 .social-footer {
     display: flex;
     justify-content: center;
-    margin-top: 50px; /* More space */
-    gap: 30px; /* Increased gap */
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--main-border-color);
 }
 
 .social-link {
     display: block;
-}
-
-.social-logo {
-    width: 50px; /* Larger social icons */
+    width: 50px;
     height: 50px;
     border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 8px var(--shadow-color);
+    overflow: hidden;
+    box-shadow: var(--main-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-logo:hover {
-    transform: scale(1.15);
-    box-shadow: 0 5px 15px var(--link-color); /* Glow on hover */
+.social-link:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.social-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Use contain to prevent cropping for logos */
+    background-color: var(--main-card-background); /* Background if images are not transparent */
+    border-radius: 50%;
 }
 
 /* Resume Section */
-.resume {
-    padding: 80px 20px;
-    text-align: center;
+.resume-buttons-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 1.5rem; /* Space between buttons */
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .resume-button {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 18px 35px; /* Larger button */
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--main-primary-color);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: var(--main-shadow);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap; /* Prevent text from wrapping inside button */
 }
 
 .resume-button:hover {
-    background-color: var(--link-color);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 87, 127, 0.6); /* Glow on hover */
+    background: var(--main-accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Different style for the secondary button (certificate) */
+.resume-button.secondary {
+    background: var(--main-secondary-color); /* A different color for distinction */
+}
+
+body.dark-mode .resume-button.secondary {
+    background: #5a6268; /* Darker secondary color for dark mode */
+}
+
+.resume-button.secondary:hover {
+    background: var(--main-primary-color); /* Hover to primary color */
 }
 
 /* Projects Section */
 .projects {
-    padding: 80px 20px;
-    text-align: center;
+    overflow: hidden; /* Hide overflowing slides */
+    position: relative;
 }
 
 .project-slider {
-    display: grid;
-    gap: 40px; /* Increased gap */
-    justify-content: center;
-    align-items: stretch;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory; /* For smooth snapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.project-slider::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Opera */
 }
 
 .project-slide {
-    background: var(--card-bg); /* Glass effect for project cards */
-    padding: 35px; /* More padding */
-    border-radius: 18px; /* More rounded corners */
-    border: 1px solid var(--card-border);
-    box-shadow: 0 8px 20px var(--card-shadow); /* Enhanced shadow */
-    text-align: left;
+    flex: 0 0 350px; /* Fixed width for slides */
+    min-width: 300px; /* Minimum width for very small screens */
+    background: var(--main-card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--main-shadow);
+    text-align: center;
+    border: 1px solid var(--main-border-color);
+    scroll-snap-align: start; /* Snap to start of slide */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -417,376 +430,343 @@ p {
 }
 
 .project-slide:hover {
-    transform: translateY(-10px); /* More pronounced lift */
-    box-shadow: 0 12px 30px rgba(140, 82, 255, 0.5); /* Accent color glow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-slide h3 {
-    color: var(--link-color);
-    font-size: 2rem; /* Larger heading */
-    margin-bottom: 15px;
+    color: var(--main-primary-color);
+    margin-bottom: 0.8em;
+    font-size: 1.4em;
 }
 
 .project-slide p {
-    color: var(--text-secondary);
-    margin-bottom: 25px; /* More vertical spacing */
-    flex-grow: 1;
+    font-size: 0.95em;
+    margin-bottom: 1.5em;
+    flex-grow: 1; /* Allow description to take available space */
 }
 
 .project-slide a {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    align-self: flex-start;
+    background: var(--main-primary-color);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
 }
 
 .project-slide a:hover {
-    background-color: var(--link-color);
+    background: var(--main-accent-color);
 }
 
-
-/* Contact Section */
+/* Contact Section - FURTHER IMPROVED (Premium Look) */
 .contact {
-    padding: 80px 20px;
-    text-align: center;
+    /* Use new premium colors in gradient */
+    background: radial-gradient(circle at top left, var(--main-primary-color) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, var(--main-accent-color) 0%, transparent 40%),
+                var(--main-background);
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 8rem 5%;
+    position: relative;
+    overflow: hidden;
 }
 
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Increased gap */
-    max-width: 650px; /* Slightly wider form */
-    margin: 0 auto;
+.contact h2 {
+    color: var(--main-text-color);
+    margin-bottom: 3.5rem;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    max-width: 700px;
+    width: 100%;
+    background: var(--main-card-background);
+    padding: 3.5rem;
+    border-radius: 15px;
+    box-shadow: var(--main-shadow);
+    border: 1px solid var(--main-border-color);
+    margin-top: 2.5rem;
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    border-left: 5px solid var(--main-primary-color); /* Emphasized accent border */
+    display: flex; /* Crucial for stacking form elements */
+    flex-direction: column; /* This ensures elements stack vertically */
+    gap: 1.5rem; /* Space between form elements */
 }
 
-#contact-form label {
-    font-weight: 600;
-    color: var(--accent-color);
-    font-size: 1.1rem;
+.contact-form:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--main-accent-color);
 }
 
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form textarea {
-    padding: 15px; /* More padding */
-    border: 1px solid var(--border-color);
-    border-radius: 10px; /* More rounded */
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+.contact-form label {
+    display: block; /* Ensures label takes its own line */
+    margin-bottom: 0.2rem; /* Reduced margin, as gap handles main spacing */
+    font-weight: 700; /* Bold */
+    color: var(--main-text-color);
+    font-size: 1.05em;
+    text-transform: uppercase; /* Uppercase */
+    letter-spacing: 0.5px;
 }
 
-#contact-form input:focus,
-#contact-form textarea:focus {
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    /* margin-bottom removed, now controlled by gap on parent */
+    border: 2px solid var(--main-border-color);
+    border-radius: 10px;
+    background-color: var(--main-background);
+    color: var(--main-text-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 500; /* Make typed text slightly bolder than default */
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.04); /* Subtle inner shadow for depth */
+}
+
+/* Placeholder styling */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--main-secondary-color);
+    opacity: 0.8; /* Slightly more visible placeholder */
+    font-weight: 600; /* Bold placeholder text */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--main-primary-color);
     outline: none;
-    border-color: var(--link-color);
-    box-shadow: 0 0 0 3px rgba(255, 87, 127, 0.4); /* Stronger focus glow */
-    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 4px rgba(var(--main-primary-color-rgb), 0.3), inset 0 2px 4px rgba(0,0,0,0.06); /* Stronger focus shadow with RGB primary color */
+    background-color: var(--main-card-background);
+    transform: scale(1.005); /* Very subtle growth on focus */
 }
 
-#contact-form textarea {
+.contact-form textarea {
+    min-height: 180px;
     resize: vertical;
-    min-height: 150px; /* Taller textarea */
 }
 
-#contact-form button {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 18px 35px; /* Larger button */
+.contact-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(45deg, var(--main-primary-color), var(--main-accent-color)); /* Gradient button */
+    color: #fff;
     border: none;
     border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.2em;
+    font-weight: 700; /* Bold */
     cursor: pointer;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Uppercase */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); /* Stronger button shadow */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    margin-top: 1.5rem; /* Add some margin on top of the button */
 }
 
-#contact-form button:hover {
-    background-color: var(--link-color);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 87, 127, 0.6);
+.contact-form button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Slightly stronger shimmer */
+    transition: all 0.4s ease;
+    transform: skewX(-20deg);
 }
+
+.contact-form button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+.contact-form button[type="submit"]:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.6);
+    background: linear-gradient(45deg, var(--main-accent-color), var(--main-primary-color)); /* Swap gradient direction/colors */
+}
+
 
 /* Footer */
 .footer {
-    background: var(--header-bg); /* Consistent with header background */
-    padding: 25px;
     text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
-    margin-top: 80px; /* More margin */
-    box-shadow: 0 -2px 10px var(--shadow-color);
+    padding: 2rem;
+    background: var(--main-card-background);
+    color: var(--main-secondary-color);
+    font-size: 0.9em;
+    border-top: 1px solid var(--main-border-color);
+    box-shadow: var(--main-shadow);
 }
 
-/* --- Responsive Design (Media Queries) --- */
+/* Utility Classes for Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-/* Tablet & Smaller Laptops */
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
     .header {
-        flex-direction: column;
-        padding: 15px 20px;
+        padding: 1rem 3%;
     }
 
-    .heading {
-        margin-bottom: 15px;
-        font-size: 2rem;
+    .navigation ul {
+        gap: 1.5rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-picture {
+        margin-bottom: 2rem;
+    }
+
+    .about-text h2 {
+        text-align: center;
+    }
+
+    .about-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline {
+        padding-left: 20px;
+        margin-top: 2rem;
+        width: 100%;
+    }
+    .timeline-item .dot {
+        left: -9px;
+    }
+    .timeline-item .content {
+        margin-left: 10px;
+    }
+
+    .social-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .resume-buttons-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .resume-button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    section {
+        padding: 4rem 3%;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 3%;
     }
 
     .navigation ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
-    }
-
-    .navigation ul li {
-        margin-left: 0;
+        gap: 1rem;
     }
 
     .theme-toggle-button {
-        position: absolute; /* Position toggle button differently */
-        top: 20px;
-        right: 20px;
-        margin-left: 0;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
     }
 
-    h2 {
-        font-size: 2.2rem; /* Adjusted for smaller screens */
-        margin-bottom: 40px;
+    .project-slide {
+        flex: 0 0 90%;
     }
 
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
+    .contact-form {
+        padding: 2rem;
+    }
+    .contact h2 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.6em; }
+    .header .heading {
+        font-size: 1.5em;
+    }
+    .navigation a {
+        font-size: 0.9em;
+    }
+    section {
+        padding: 3rem 2%;
     }
 
     .profile-picture {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
     }
 
-    .about-text {
-        text-align: center;
+    .timeline-item .content {
+        padding: 1rem;
     }
-
-    .timeline {
-        margin: 40px auto;
-        padding-left: 30px;
-    }
-
-    .timeline::before {
-        left: 15px;
-        width: 2px;
-    }
-
-    .timeline-item {
-        padding-left: 40px;
-        margin-bottom: 30px;
-    }
-
-    .timeline-item .dot {
-        left: 7px;
-        width: 18px;
-        height: 18px;
-        border-width: 2px;
-    }
-
-    .timeline-item h3 {
-        font-size: 1.5rem;
-    }
-
-    .timeline-item h4 {
-        font-size: 1.2rem;
-    }
-
-    section:not(.header):not(.footer) > div,
-    .resume, .projects, .contact {
-        padding: 30px;
-        margin: 20px auto;
-    }
-
-    .project-slider {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 1 or 2 columns based on space */
-    }
-
-    .social-logo {
+    .social-link {
         width: 40px;
         height: 40px;
     }
-
-    .resume-button,
-    #contact-form button {
-        padding: 15px 30px;
-        font-size: 1.1rem;
+    .resume-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9em;
     }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-    .header {
-        padding: 10px 15px;
-    }
-
-    .heading {
-        font-size: 1.8rem;
-    }
-
-    .navigation ul {
-        gap: 10px;
-    }
-
-    .theme-toggle-button {
-        top: 15px;
-        right: 15px;
-        font-size: 1.3rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-
-    .about {
-        padding: 50px 15px;
-    }
-
-    section:not(.header):not(.footer) > div,
-    .resume, .projects, .contact {
-        padding: 25px;
-        margin: 15px auto;
-        border-radius: 12px;
-    }
-
-    .profile-picture {
-        width: 160px;
-        height: 160px;
-        border-width: 4px;
-    }
-
-    .timeline-item {
-        margin-bottom: 25px;
-    }
-
-    .timeline-item h3 {
-        font-size: 1.3rem;
-    }
-
-    .timeline-item h4 {
-        font-size: 1.1rem;
-    }
-
-    .resume-button,
-    #contact-form button {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
-
-    .project-slide h3 {
-        font-size: 1.7rem;
-    }
-    .project-slide p {
-        font-size: 0.95rem;
-    }
-    .project-slide a {
-        padding: 10px 20px;
-        font-size: 0.95rem;
-    }
-
-    .social-logo {
-        width: 35px;
-        height: 35px;
-    }
-
-    .footer {
-        padding: 20px;
-        font-size: 0.85rem;
-        margin-top: 50px;
-    }
-}
-
-/* Smaller Mobile Devices */
-@media (max-width: 480px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .heading {
-        font-size: 1.6rem;
-        margin-bottom: 10px;
-    }
-    .navigation ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-    .navigation ul li {
-        margin-left: 0;
-    }
-    .theme-toggle-button {
-        position: static; /* Back to flow */
-        margin-top: 15px;
-        margin-left: 0;
-        font-size: 1.2rem;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    .about, .resume, .projects, .contact {
-        padding: 40px 10px;
-    }
-    section:not(.header):not(.footer) > div,
-    .resume, .projects, .contact {
-        padding: 20px;
-        margin: 10px auto;
-    }
-    .timeline {
-        padding-left: 20px;
-        margin: 30px auto;
-    }
-    .timeline::before {
-        left: 9px;
-        width: 1.5px;
-    }
-    .timeline-item {
-        padding-left: 28px;
-        margin-bottom: 20px;
-    }
-    .timeline-item .dot {
-        left: 3px;
-        width: 16px;
-        height: 16px;
-        border-width: 2px;
-    }
-    .timeline-item h3 {
-        font-size: 1.1rem;
-    }
-    .timeline-item h4 {
-        font-size: 0.95rem;
-    }
-    p {
-        font-size: 0.9rem;
+    .project-slide {
+        padding: 1.5rem;
     }
     .project-slide h3 {
-        font-size: 1.4rem;
+        font-size: 1.2em;
     }
     .project-slide p {
-        font-size: 0.85rem;
+        font-size: 0.85em;
     }
-    .project-slide a {
-        font-size: 0.85rem;
+    .contact-form {
+        padding: 1.5rem;
     }
-    .social-logo {
-        width: 30px;
-        height: 30px;
+    .contact-form button[type="submit"] {
+        font-size: 1em;
+        letter-spacing: 0.5px;
+    }
+    .contact h2 {
+        font-size: 1.8em;
     }
 }
